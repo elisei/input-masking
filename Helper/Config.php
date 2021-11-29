@@ -18,11 +18,11 @@ use Magento\Store\Model\StoreManagerInterface;
  */
 class Config extends AbstractHelper
 {
-    protected const CONFIG_PATH_GENERAL = 'input_masking/general/%s';
+    public const CONFIG_PATH_GENERAL = 'input_masking/general/%s';
 
-    protected const CONFIG_PATH_ADDRESS_INPUT = 'input_masking/general/address/%s/%s';
+    public const CONFIG_PATH_ADDRESS_INPUT = 'input_masking/general/address/%s/%s';
 
-    protected const CONFIG_PATH_CUSTOMER_INPUT = 'input_masking/general/customer/%s/%s';
+    public const CONFIG_PATH_CUSTOMER_INPUT = 'input_masking/general/customer/%s/%s';
 
     /**
      * @var ScopeConfigInterface
