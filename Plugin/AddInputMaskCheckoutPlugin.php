@@ -11,9 +11,6 @@ declare(strict_types=1);
 namespace O2TI\InputMasking\Plugin;
 
 use Magento\Checkout\Block\Checkout\LayoutProcessor;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Store\Model\ScopeInterface;
-use Magento\Store\Model\StoreManagerInterface;
 use O2TI\InputMasking\Helper\Config;
 
 /**
@@ -27,27 +24,11 @@ class AddInputMaskCheckoutPlugin
     private $config;
 
     /**
-     * @var ScopeInterface
-     */
-    private $scopeConfig;
-
-    /**
-     * @var StoreManagerInterface
-     */
-    private $storeManagerInterface;
-
-    /**
-     * @param ScopeConfigInterface  $scopeConfig
-     * @param StoreManagerInterface $storeManagerInterface
-     * @param Config                $config
+     * @param Config $config
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig,
-        StoreManagerInterface $storeManagerInterface,
         Config $config
     ) {
-        $this->scopeConfig = $scopeConfig;
-        $this->storeManagerInterface = $storeManagerInterface;
         $this->config = $config;
     }
 
@@ -58,7 +39,7 @@ class AddInputMaskCheckoutPlugin
      *
      * @return array
      */
-    public function changeCreateAccount(array $jsLayout): ?array
+    public function changeCreateAccount(array $jsLayout): array
     {
         // phpcs:ignore
         if (isset($jsLayout['components']['checkout']['children']['steps']['children']['identification-step']['children']['identification']['children']['createAccount']['children']['create-account-fieldset']['children'])) {
@@ -78,7 +59,7 @@ class AddInputMaskCheckoutPlugin
      *
      * @return array
      */
-    public function changeShippingFields(array $jsLayout): ?array
+    public function changeShippingFields(array $jsLayout): array
     {
         // phpcs:ignore
         if (isset($jsLayout['components']['checkout']['children']['steps']['children']['shipping-step'])) {
