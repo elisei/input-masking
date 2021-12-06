@@ -26,7 +26,7 @@ Defina uma máscara ao campo.
 
 ## Instalação e Configuração
 
-Visite nossa [Wiki](wiki) e veja como configurar e instalar nosso módulo.
+Visite nossa [Wiki](https://github.com/elisei/input-masking/wiki) e veja como configurar e instalar nosso módulo.
 
 ## License
 
